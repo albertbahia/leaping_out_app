@@ -1,170 +1,126 @@
-.grid-block, .main, .post, .comments li, .comment-form {
-	background: #fff;
-	border-radius: 3px;
-	padding: 10px;
-	margin-bottom: 10px;
-	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-}
-
+/* CSS declarations go here */
 body {
-	background: #eee; color: #666666;
+  font-family: sans-serif;
+  background-color: #315481;
+  background-image: linear-gradient(to bottom, #315481, #918e82 100%);
+  background-attachment: fixed;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 14px;
 }
 
-#main {
-	position: relative;
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: white;
 }
 
-.page {
-	position: absolute; top: 0px;
-	width: 100%;
+header {
+  background: #d2edf4;
+  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  padding: 20px 15px 15px 15px;
+  position: relative;
 }
 
-.navbar {
-	margin-bottom: 10px;
+#login-buttons {
+  display: block;
 }
 
-/* line 32, ../sass/style.scss */ .navbar .navbar-inner {
-	border-radius: 0px 0px 3px 3px; } #spinner {
-	height: 300px;
+h1 {
+  font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 1em;
 }
 
-.post {
-	/* For modern browsers */
-	/* For IE 6/7 (trigger hasLayout) */ *zoom: 1;
-	position: relative;
-	opacity: 1;
+form {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  position: relative;
 }
 
-.post:before, .post:after {
-	content: "";
-	display: table;
+.new-task input {
+  box-sizing: border-box;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding-right: 80px;
+  font-size: 1em;
 }
 
-.post:after {
-	clear: both;
+.new-task input:focus{
+  outline: 0;
 }
 
-.post.invisible {
-	opacity: 0;
+ul {
+  margin: 0;
+  padding: 0;
+  background: white;
 }
 
-.post.instant {
-	-webkit-transition: none; -moz-transition: none; -o-transition: none; transition: none;
+.delete {
+  float: right;
+  font-weight: bold;
+  background: none;
+  font-size: 1em;
+  border: none;
+  position: relative;
 }
 
-￼￼.post.animate {
-	￼￼-webkit-transition: all 300ms 0ms; -moz-transition: all 300ms 0ms ease-in; -o-transition: all 300ms 0ms ease-in; transition: all 300ms 0ms ease-in;
+li {
+  position: relative;
+  list-style: none;
+  padding: 15px;
+  border-bottom: #eee solid 1px;
 }
 
-.post .upvote {
-	display: block; margin: 7px 12px 0 0; float: left;
+li .text {
+  margin-left: 10px;
 }
 
-.post .post-content {
-	float: left;
+li.checked {
+  color: #888;
 }
 
-.post .post-content h3 {
-	margin: 0;
-	line-height: 1.4; font-size: 18px;
+li.checked .text {
+  text-decoration: line-through;
 }
 
-.post .post-content h3 a {
-	display: inline-block;
-	margin-right: 5px;
+li.private {
+  background: #eee;
+  border-color: #ddd;
 }
 
-.post .post-content h3 span {
-	font-weight: normal; font-size: 14px; display: inline-block; color: #aaaaaa;
+header .hide-completed {
+  float: right;
 }
 
-.post .post-content p {
-	margin: 0;
+.toggle-private {
+  margin-left: 5px;
 }
 
-.post .discuss {
-	display: block; float: right; margin-top: 7px;
-}
+@media (max-width: 600px) {
+  li {
+    padding: 12px 15px;
+  }
 
-.comments {
-	list-style-type: none; margin: 0;
-}
+  .search {
+    width: 150px;
+    clear: both;
+  }
 
-.comments li h4 {
-	font-size: 16px; margin: 0;
-}
-
-.comments li h4 .date {
-	font-size: 12px;
-	font-weight: normal;
-}
-
-.comments li h4 a {
-	font-size: 12px;
-}
-
-.comments li p:last-child {
-	margin-bottom: 0;
-}
-
-.dropdown-menu span {
-	display: block; padding: 3px 20px; clear: both; line-height: 20px; color: #bbb; white-space: nowrap;
-}
-
-￼￼.load-more {
-	display: block;
-	border-radius: 3px;
-	background: rgba(0, 0, 0, 0.05); text-align: center;
-	height: 60px;
-	line-height: 60px; margin-bottom: 10px;
-}
-
-.load-more:hover {
-	text-decoration: none; background: rgba(0, 0, 0, 0.1);
-}
-
-.posts .spinner-container {
-	position: relative; height: 100px;
-}
-
-.jumbotron {
-	text-align: center;
-}
-
-.jumbotron h2 {
-	font-size: 60px;
-	font-weight: 100;
-}
-
-@-webkit-keyframes fadeOut {
-	0% {opacity: 0;}
-	10% {opacity: 1;}
-	90% {opacity: 1;}
-	100% {opacity: 0;}
-}
-
-@keyframes fadeOut { 0% {opacity: 0;} 10% {opacity: 1;} 90% {opacity: 1;} 100% {opacity: 0;}
-}
-
-.errors {
-	position: fixed; z-index: 10000; padding: 10px;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	bottom: 0px; pointer-events: none;
-}
-
-.alert {
-	animation: fadeOut 2700ms ease-in 0s 1 forwards;
-	￼Commit 2-3
-	Re-arranged file structure.
-	View on GitHub Launch Instance
-	￼￼
-	A Note on CoffeeScript
-	In this book we’ll be writing in pure JavaScript. But if you prefer CoffeeScript, Meteor has you covered. Simply add the CoffeeScript package and you’ll be good to go:
-	 meteor add coffeescript
-	-webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards; -moz-animation: fadeOut 2700ms ease-in 0s 1 forwards;
-	width: 250px;
-	float: right;
-	clear: both; margin-bottom: 5px; pointer-events: auto;
+  .new-task input {
+    padding-bottom: 5px;
+  }
 }
